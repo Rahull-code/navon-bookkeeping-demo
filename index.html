@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bookkeeping Services | Navon Global</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f6f9fc;
+color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:22px;
+font-weight:600;
+color:#1d3557;
+}
+
+.nav-links a{
+margin-left:25px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#1d3557,#457b9d);
+color:white;
+padding:100px 8%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero-text h1{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.hero-text button{
+padding:15px 35px;
+border:none;
+background:#ffb703;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+.hero img{
+width:420px;
+border-radius:10px;
+}
+
+/* TRUST BAR */
+
+.trust{
+background:white;
+padding:30px 8%;
+display:flex;
+justify-content:space-around;
+text-align:center;
+flex-wrap:wrap;
+}
+
+.trust div{
+margin:10px 20px;
+}
+
+.trust h3{
+color:#1d3557;
+}
+
+/* SERVICES */
+
+.section{
+padding:80px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:36px;
+color:#1d3557;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+color:#1d3557;
+margin-bottom:10px;
+}
+
+/* PROCESS */
+
+.process{
+background:#eef4f9;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.step{
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:#1d3557;
+color:white;
+padding:70px 8%;
+text-align:center;
+}
+
+.testimonial p{
+font-size:18px;
+max-width:700px;
+margin:auto;
+margin-bottom:20px;
+}
+
+/* CONTACT FORM */
+
+.contact{
+padding:80px 8%;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.contact-form{
+flex:1;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:5px;
+}
+
+.contact-form button{
+background:#1d3557;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#457b9d,#1d3557);
+color:white;
+text-align:center;
+padding:70px 20px;
+}
+
+.cta button{
+margin-top:20px;
+padding:15px 35px;
+background:#ffb703;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#bbb;
+text-align:center;
+padding:20px;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero img{
+margin-top:40px;
+width:90%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">Navon Global</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Professional Bookkeeping Services</h1>
+
+<p>
+Reliable, CPA-led bookkeeping services helping businesses maintain accurate financial records and scale with confidence.
+</p>
+
+<button>Book Free Consultation</button>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07">
+
+</section>
+
+<!-- TRUST -->
+
+<section class="trust">
+
+<div>
+<h3>20+ Years</h3>
+<p>Finance Experience</p>
+</div>
+
+<div>
+<h3>500+</h3>
+<p>Businesses Supported</p>
+</div>
+
+<div>
+<h3>CPA Led</h3>
+<p>Accounting Experts</p>
+</div>
+
+<div>
+<h3>Global</h3>
+<p>Finance Support</p>
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section">
+
+<div class="section-title">
+<h2>Our Bookkeeping Services</h2>
+</div>
+
+<div class="services">
+
+<div class="card">
+<h3>Daily Transaction Recording</h3>
+<p>Maintain accurate financial records with daily bookkeeping.</p>
+</div>
+
+<div class="card">
+<h3>Bank Reconciliation</h3>
+<p>Ensure bank statements match financial transactions.</p>
+</div>
+
+<div class="card">
+<h3>Accounts Payable</h3>
+<p>Manage vendor payments and invoice processing.</p>
+</div>
+
+<div class="card">
+<h3>Accounts Receivable</h3>
+<p>Track invoices and ensure faster collections.</p>
+</div>
+
+<div class="card">
+<h3>Financial Reporting</h3>
+<p>Monthly financial reports for strategic decisions.</p>
+</div>
+
+<div class="card">
+<h3>Accounting Software</h3>
+<p>Integration with Xero, QuickBooks & MYOB.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section class="section process">
+
+<div class="section-title">
+<h2>Our Bookkeeping Process</h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<h3>1. Consultation</h3>
+<p>Understand your business and accounting needs.</p>
+</div>
+
+<div class="step">
+<h3>2. Setup</h3>
+<p>Configure systems and workflows.</p>
+</div>
+
+<div class="step">
+<h3>3. Manage Books</h3>
+<p>Daily bookkeeping and reconciliations.</p>
+</div>
+
+<div class="step">
+<h3>4. Financial Reports</h3>
+<p>Monthly reporting and financial insights.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section class="testimonial">
+
+<p>
+"Navon Global helped streamline our financial operations and improved reporting accuracy significantly."
+</p>
+
+<strong>— Finance Director, Australian Construction Company</strong>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<div>
+
+<h2>Talk to Our Bookkeeping Experts</h2>
+
+<p>
+Get reliable bookkeeping support from experienced finance professionals.
+</p>
+
+</div>
+
+<div class="contact-form">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Company Name">
+
+<textarea rows="4" placeholder="Tell us about your bookkeeping needs"></textarea>
+
+<button>Submit</button>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready to Simplify Your Bookkeeping?</h2>
+
+<p>Partner with Navon Global for reliable accounting support.</p>
+
+<button>Get Started</button>
+
+</section>
+
+<footer>
+
+<p>© 2026 Navon Global. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
