@@ -9,6 +9,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- AOS Animation -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
 <style>
 
 *{
@@ -24,7 +27,6 @@ color:#333;
 }
 
 /* NAVBAR */
-
 .navbar{
 display:flex;
 justify-content:space-between;
@@ -48,7 +50,6 @@ font-weight:500;
 }
 
 /* HERO */
-
 .hero{
 background:linear-gradient(135deg,#1d3557,#457b9d);
 color:white;
@@ -87,8 +88,7 @@ width:420px;
 border-radius:10px;
 }
 
-/* TRUST BAR */
-
+/* TRUST */
 .trust{
 background:white;
 padding:30px 8%;
@@ -106,8 +106,7 @@ margin:10px 20px;
 color:#1d3557;
 }
 
-/* SERVICES */
-
+/* SECTION */
 .section{
 padding:80px 8%;
 }
@@ -122,6 +121,7 @@ font-size:36px;
 color:#1d3557;
 }
 
+/* SERVICES */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -145,8 +145,65 @@ color:#1d3557;
 margin-bottom:10px;
 }
 
-/* PROCESS */
+/* SOFTWARE SECTION */
+.software{
+padding:80px 8%;
+background:#f8fbff;
+overflow:hidden;
+}
 
+.software p{
+text-align:center;
+color:#555;
+margin-top:10px;
+}
+
+.software-slider{
+overflow:hidden;
+margin-top:40px;
+}
+
+.software-track{
+display:flex;
+gap:30px;
+animation:scroll 20s linear infinite;
+}
+
+.software-card{
+min-width:160px;
+height:100px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:all 0.4s ease;
+}
+
+.software-card:hover{
+transform:scale(1.15) translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.software-card img{
+max-width:100px;
+opacity:0.8;
+transition:0.3s;
+}
+
+.software-card:hover img{
+opacity:1;
+transform:scale(1.1);
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* PROCESS */
 .process{
 background:#eef4f9;
 }
@@ -165,7 +222,6 @@ border-radius:10px;
 }
 
 /* TESTIMONIAL */
-
 .testimonial{
 background:#1d3557;
 color:white;
@@ -173,15 +229,7 @@ padding:70px 8%;
 text-align:center;
 }
 
-.testimonial p{
-font-size:18px;
-max-width:700px;
-margin:auto;
-margin-bottom:20px;
-}
-
-/* CONTACT FORM */
-
+/* CONTACT */
 .contact{
 padding:80px 8%;
 display:flex;
@@ -216,7 +264,6 @@ cursor:pointer;
 }
 
 /* CTA */
-
 .cta{
 background:linear-gradient(135deg,#457b9d,#1d3557);
 color:white;
@@ -224,36 +271,12 @@ text-align:center;
 padding:70px 20px;
 }
 
-.cta button{
-margin-top:20px;
-padding:15px 35px;
-background:#ffb703;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
 /* FOOTER */
-
 footer{
 background:#111;
 color:#bbb;
 text-align:center;
 padding:20px;
-}
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero img{
-margin-top:40px;
-width:90%;
-}
-
 }
 
 </style>
@@ -262,204 +285,94 @@ width:90%;
 
 <body>
 
-<!-- NAVBAR -->
-
 <div class="navbar">
-
 <div class="logo">Navon Global</div>
-
 <div class="nav-links">
 <a href="#">Home</a>
 <a href="#">Services</a>
 <a href="#">About</a>
 <a href="#">Contact</a>
 </div>
-
 </div>
-
-<!-- HERO -->
 
 <section class="hero">
-
 <div class="hero-text">
-
 <h1>Professional Bookkeeping Services</h1>
-
-<p>
-Reliable, CPA-led bookkeeping services helping businesses maintain accurate financial records and scale with confidence.
-</p>
-
+<p>Reliable, CPA-led bookkeeping services helping businesses scale.</p>
 <button>Book Free Consultation</button>
-
 </div>
-
 <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07">
-
 </section>
-
-<!-- TRUST -->
 
 <section class="trust">
-
-<div>
-<h3>20+ Years</h3>
-<p>Finance Experience</p>
-</div>
-
-<div>
-<h3>500+</h3>
-<p>Businesses Supported</p>
-</div>
-
-<div>
-<h3>CPA Led</h3>
-<p>Accounting Experts</p>
-</div>
-
-<div>
-<h3>Global</h3>
-<p>Finance Support</p>
-</div>
-
+<div><h3>20+ Years</h3><p>Experience</p></div>
+<div><h3>500+</h3><p>Clients</p></div>
+<div><h3>CPA Led</h3><p>Experts</p></div>
+<div><h3>Global</h3><p>Support</p></div>
 </section>
 
-<!-- SERVICES -->
-
 <section class="section">
-
 <div class="section-title">
 <h2>Our Bookkeeping Services</h2>
 </div>
 
 <div class="services">
-
-<div class="card">
-<h3>Daily Transaction Recording</h3>
-<p>Maintain accurate financial records with daily bookkeeping.</p>
+<div class="card" data-aos="fade-up"><h3>Transaction Recording</h3></div>
+<div class="card" data-aos="fade-up"><h3>Bank Reconciliation</h3></div>
+<div class="card" data-aos="fade-up"><h3>Accounts Payable</h3></div>
+<div class="card" data-aos="fade-up"><h3>Accounts Receivable</h3></div>
+<div class="card" data-aos="fade-up"><h3>Financial Reporting</h3></div>
+<div class="card" data-aos="fade-up"><h3>Software Integration</h3></div>
 </div>
-
-<div class="card">
-<h3>Bank Reconciliation</h3>
-<p>Ensure bank statements match financial transactions.</p>
-</div>
-
-<div class="card">
-<h3>Accounts Payable</h3>
-<p>Manage vendor payments and invoice processing.</p>
-</div>
-
-<div class="card">
-<h3>Accounts Receivable</h3>
-<p>Track invoices and ensure faster collections.</p>
-</div>
-
-<div class="card">
-<h3>Financial Reporting</h3>
-<p>Monthly financial reports for strategic decisions.</p>
-</div>
-
-<div class="card">
-<h3>Accounting Software</h3>
-<p>Integration with Xero, QuickBooks & MYOB.</p>
-</div>
-
-</div>
-
 </section>
 
-<!-- PROCESS -->
-
-<section class="section process">
-
+<!-- SOFTWARE SECTION -->
+<section class="software">
 <div class="section-title">
-<h2>Our Bookkeeping Process</h2>
+<h2>Software Expertise</h2>
+<p>We work with top accounting tools</p>
 </div>
 
-<div class="steps">
+<div class="software-slider">
+<div class="software-track">
 
-<div class="step">
-<h3>1. Consultation</h3>
-<p>Understand your business and accounting needs.</p>
+<div class="software-card" data-aos="zoom-in">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Xero_software_logo.svg">
 </div>
 
-<div class="step">
-<h3>2. Setup</h3>
-<p>Configure systems and workflows.</p>
+<div class="software-card" data-aos="zoom-in">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/QuickBooks_Logo.svg">
 </div>
 
-<div class="step">
-<h3>3. Manage Books</h3>
-<p>Daily bookkeeping and reconciliations.</p>
+<div class="software-card" data-aos="zoom-in">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/MYOB_Logo.svg">
 </div>
 
-<div class="step">
-<h3>4. Financial Reports</h3>
-<p>Monthly reporting and financial insights.</p>
+<!-- duplicate for loop -->
+<div class="software-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Xero_software_logo.svg">
+</div>
+
+<div class="software-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/QuickBooks_Logo.svg">
+</div>
+
+<div class="software-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/MYOB_Logo.svg">
 </div>
 
 </div>
-
-</section>
-
-<!-- TESTIMONIAL -->
-
-<section class="testimonial">
-
-<p>
-"Navon Global helped streamline our financial operations and improved reporting accuracy significantly."
-</p>
-
-<strong>— Finance Director, Australian Construction Company</strong>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-<div>
-
-<h2>Talk to Our Bookkeeping Experts</h2>
-
-<p>
-Get reliable bookkeeping support from experienced finance professionals.
-</p>
-
 </div>
-
-<div class="contact-form">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Email Address">
-
-<input type="text" placeholder="Company Name">
-
-<textarea rows="4" placeholder="Tell us about your bookkeeping needs"></textarea>
-
-<button>Submit</button>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta">
-
-<h2>Ready to Simplify Your Bookkeeping?</h2>
-
-<p>Partner with Navon Global for reliable accounting support.</p>
-
-<button>Get Started</button>
-
 </section>
 
 <footer>
-
-<p>© 2026 Navon Global. All Rights Reserved.</p>
-
+<p>© 2026 Navon Global</p>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>
