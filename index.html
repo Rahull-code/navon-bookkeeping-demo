@@ -25,6 +25,38 @@ z-index:1000;
 
 .logo{font-size:22px;font-weight:600;color:#1d3557;}
 
+/* ADD BELOW */
+.logo{
+text-decoration:none;
+color:#1d3557;
+display:flex;
+flex-direction:column;
+line-height:1.2;
+}
+
+.logo div{
+font-size:22px;
+font-weight:600;
+}
+
+.logo-sub{
+font-size:12px;
+color:#457b9d;
+font-weight:500;
+letter-spacing:1px;
+margin-top:2px;
+transition:0.3s;
+}
+
+.logo:hover .logo-sub{
+color:#ffb703;
+letter-spacing:1.5px;
+}
+
+html{
+scroll-behavior:smooth;
+}
+  
 .nav-links a{
 margin-left:25px;text-decoration:none;color:#333;font-weight:500;
 }
@@ -333,6 +365,9 @@ animation:float 4s ease-in-out infinite;
 50%{transform:translateY(-10px);}
 100%{transform:translateY(0);}
 }
+
+
+  
   
 </style>
 
@@ -350,35 +385,6 @@ animation:float 4s ease-in-out infinite;
 <a href="https://navonglobal.com/contact/" target="_blank">Contact</a>
 </div>
 </div>
-
-.logo{
-text-decoration:none;
-color:#1d3557;
-display:flex;
-flex-direction:column;
-line-height:1.2;
-}
-
-.logo div{
-font-size:22px;
-font-weight:600;
-}
-
-.logo-sub{
-font-size:12px;
-color:#457b9d;
-font-weight:500;
-letter-spacing:1px;
-margin-top:2px;
-transition:0.3s;
-}
-
-/* Hover effect */
-.logo:hover .logo-sub{
-color:#ffb703;
-letter-spacing:1.5px;
-}
-  
   
 <!-- HERO -->
 <section class="hero">
