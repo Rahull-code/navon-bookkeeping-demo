@@ -15,12 +15,62 @@
 
 body{background:#f4f7fb;color:#222;}
 
-/* NAVBAR */
+/* PREMIUM NAVBAR */
 .navbar{
-display:flex;justify-content:space-between;align-items:center;
-padding:20px 8%;background:white;position:sticky;top:0;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 8%;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+position:sticky;
+top:0;
 z-index:1000;
+transition:all 0.3s ease;
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+/* Shrink on scroll */
+.navbar.scrolled{
+padding:14px 8%;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* NAV LINKS */
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+position:relative;
+transition:0.3s;
+}
+
+/* Underline animation */
+.nav-links a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#1d3557;
+transition:0.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+/* Active link */
+.nav-links a.active{
+color:#1d3557;
+font-weight:600;
+}
+
+.nav-links a.active::after{
+width:100%;
 }
 
 .logo{font-size:22px;font-weight:600;color:#1d3557;}
@@ -530,6 +580,36 @@ let msg=`New Lead:%0AName: ${name}%0AEmail: ${email}%0ACompany: ${company}`;
 
 window.open(`https://wa.me/YOURNUMBER?text=${msg}`,'_blank');
 }
+
+// Navbar shrink effect
+window.addEventListener("scroll", function(){
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// Active link highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if(a.getAttribute("href") === "#" + current){
+      a.classList.add("active");
+    }
+  });
+});
+  
+  
 </script>
 
 </body>
