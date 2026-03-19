@@ -1,610 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bookkeeping Services | Navon Global</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{background:#f4f7fb;color:#222;}
-
-/* PREMIUM NAVBAR */
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:22px 8%;
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-position:sticky;
-top:0;
-z-index:1000;
-transition:all 0.3s ease;
-border-bottom:1px solid rgba(0,0,0,0.05);
-}
-
-/* Shrink on scroll */
-.navbar.scrolled{
-padding:14px 8%;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-/* NAV LINKS */
-.nav-links a{
-margin-left:30px;
-text-decoration:none;
-color:#333;
-font-weight:500;
-position:relative;
-transition:0.3s;
-}
-
-/* Underline animation */
-.nav-links a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:2px;
-background:#1d3557;
-transition:0.3s;
-}
-
-.nav-links a:hover::after{
-width:100%;
-}
-
-/* Active link */
-.nav-links a.active{
-color:#1d3557;
-font-weight:600;
-}
-
-.nav-links a.active::after{
-width:100%;
-}
-
-/* ADD BELOW */
-.logo{
-text-decoration:none;
-color:#1d3557;
-display:flex;
-flex-direction:column;
-line-height:1.2;
-}
-
-.logo div{
-font-size:22px;
-font-weight:600;
-}
-
-.logo-sub{
-font-size:12px;
-color:#457b9d;
-font-weight:500;
-letter-spacing:1px;
-margin-top:2px;
-transition:0.3s;
-}
-
-.logo:hover .logo-sub{
-color:#ffb703;
-letter-spacing:1.5px;
-}
-
-html{
-scroll-behavior:smooth;
-}
-  
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#1d3557,#457b9d);
-color:white;padding:120px 8%;
-display:flex;justify-content:space-between;flex-wrap:wrap;
-}
-
-.hero-text{max-width:500px;}
-
-.hero-text h1{font-size:46px;margin-bottom:20px;}
-
-.hero-text p{margin-bottom:25px;line-height:1.6;}
-
-.hero-text button{
-padding:15px 35px;background:#ffb703;border:none;border-radius:8px;
-cursor:pointer;font-weight:600;
-}
-
-/* TRUST */
-.trust{
-background:white;padding:40px 8%;display:flex;
-justify-content:space-around;text-align:center;
-}
-
-/* SERVICES */
-.section{padding:100px 8%;}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.card{
-background:white;padding:30px;border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-/* SOFTWARE */
-.software{padding:100px 8%;background:#eef4f9;}
-.logo-track{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.logo-item{
-width:120px;
-height:120px;
-background:#fff;
-border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-animation:floatLogo 4s ease-in-out infinite;
-transition:0.3s;
-}
-
-.logo-item img{
-width:70px;
-filter:grayscale(100%);
-opacity:0.8;
-transition:0.3s;
-}
-
-.logo-item:hover{
-transform:translateY(-15px) scale(1.05);
-}
-
-.logo-item:hover img{
-filter:none;
-opacity:1;
-}
-
-@keyframes floatLogo{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
-}
-
-/* Natural floating delay */
-.logo-item:nth-child(1){animation-delay:0s;}
-.logo-item:nth-child(2){animation-delay:0.5s;}
-.logo-item:nth-child(3){animation-delay:1s;}
-.logo-item:nth-child(4){animation-delay:1.5s;}
-.logo-item:nth-child(5){animation-delay:2s;}
-.logo-item:nth-child(6){animation-delay:2.5s;}
-
-.logo-item img{
-width:80px;filter:grayscale(100%);opacity:0.7;
-}
-
-.logo-item:hover img{
-filter:none;opacity:1;
-}
-
-
-/* FORM */
-.lead-section{
-background:white;padding:80px 8%;text-align:center;
-}
-
-.lead-form{
-max-width:500px;margin:auto;
-}
-
-.lead-form input{
-width:100%;padding:12px;margin:10px 0;
-border:1px solid #ddd;border-radius:6px;
-}
-
-.lead-form button{
-width:100%;padding:15px;background:#1d3557;
-color:white;border:none;border-radius:6px;
-cursor:pointer;
-}
-
-/* CTA STICKY */
-.sticky-cta{
-position:fixed;bottom:0;left:0;width:100%;
-background:#1d3557;color:white;
-display:flex;justify-content:space-between;
-align-items:center;padding:15px 8%;
-}
-
-.sticky-cta button{
-background:#ffb703;border:none;padding:10px 20px;
-border-radius:5px;cursor:pointer;
-}
-
-/* FOOTER */
-footer{text-align:center;padding:20px;background:#111;color:#bbb;}
-
-/* ENHANCED SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.service-card{
-background:white;
-padding:35px;
-border-radius:18px;
-box-shadow:0 15px 35px rgba(0,0,0,0.08);
-transition:all 0.4s ease;
-position:relative;
-overflow:hidden;
-}
-
-.service-card:hover{
-transform:translateY(-12px) scale(1.02);
-box-shadow:0 25px 50px rgba(0,0,0,0.15);
-}
-
-/* gradient glow effect */
-.service-card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:4px;
-background:linear-gradient(90deg,#457b9d,#1d3557);
-}
-
-.service-card .icon{
-font-size:30px;
-margin-bottom:15px;
-}
-
-.service-card h3{
-color:#1d3557;
-margin-bottom:10px;
-font-size:20px;
-}
-
-.service-card p{
-font-size:14px;
-color:#555;
-line-height:1.6;
-}
-
-/* HERO PREMIUM */
-
-.hero{
-background:linear-gradient(135deg,#1d3557,#457b9d);
-color:white;
-padding:120px 8%;
-position:relative;
-overflow:hidden;
-}
-
-.hero-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:40px;
-}
-
-/* LEFT */
-.hero-left{
-max-width:550px;
-}
-
-.hero-left h1{
-font-size:52px;
-line-height:1.2;
-margin-bottom:20px;
-}
-
-.hero-left h1 span{
-color:#ffb703;
-}
-
-.hero-left p{
-font-size:18px;
-margin-bottom:25px;
-opacity:0.9;
-}
-
-/* CTA */
-.hero-cta{
-display:flex;
-gap:15px;
-margin-bottom:25px;
-}
-
-.primary-btn{
-background:#ffb703;
-border:none;
-padding:15px 30px;
-border-radius:8px;
-font-weight:600;
-cursor:pointer;
-}
-
-.secondary-btn{
-background:transparent;
-border:1px solid white;
-color:white;
-padding:15px 30px;
-border-radius:8px;
-cursor:pointer;
-}
-
-/* TRUST */
-.hero-trust{
-display:flex;
-gap:20px;
-font-size:14px;
-opacity:0.9;
-flex-wrap:wrap;
-}
-
-/* RIGHT GLASS CARD */
-.hero-right{
-flex:1;
-display:flex;
-justify-content:center;
-}
-
-.glass-card{
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(12px);
-padding:30px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-text-align:center;
-max-width:300px;
-}
-
-.glass-card h3{
-margin-bottom:10px;
-}
-
-.glass-card button{
-margin-top:15px;
-background:#ffb703;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-cursor:pointer;
-}
-
-/* FLOATING EFFECT */
-.glass-card{
-animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
-}
-
-
-  
-  
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookkeeping Services | Navon Global</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f172a;
+      --bg-2:#1e3a5f;
+      --primary:#ffb703;
+      --primary-dark:#f59e0b;
+      --text:#0f172a;
+      --text-light:#5b6475;
+      --white:#ffffff;
+      --card:#ffffff;
+      --border:rgba(255,255,255,0.12);
+      --shadow:0 20px 50px rgba(0,0,0,0.12);
+      --radius:18px;
+      --container:1200px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f6f8fc;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(var(--container), 92%);
+      margin:0 auto;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.72);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(15,23,42,0.06);
+      transition:all .3s ease;
+    }
+
+    .navbar.scrolled{
+      box-shadow:0 10px 30px rgba(15,23,42,0.08);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+      transition:padding .3s ease;
+    }
+
+    .navbar.scrolled .nav-inner{
+      padding:12px 0;
+    }
+
+    .logo{
+      text-decoration:none;
+      color:#16324f;
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+
+    .logo strong{
+      font-size:24px;
+      font-weight:700;
+      letter-spacing:-0.5px;
+    }
+
+    .logo span{
+      font-size:12px;
+      color:#5b7a99;
+      font-weight:500;
+      letter-spacing:1.2px;
+      margin-top:4px;
+      transition:.3s ease;
+    }
+
+    .logo:hover span{
+      color:var(--primary);
+      letter-spacing:1.5px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#334155;
+      font-weight:500;
+      position:relative;
+      transition:.3s ease;
+    }
+
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg,var(--primary),#ffd166);
+      transition:width .3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:#16324f;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+      width:100%;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,183,3,0.20), transparent 18%),
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,0.12), transparent 16%),
+        linear-gradient(135deg, #17314f 0%, #234c77 45%, #457b9d 100%);
+      color:var(--white);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.05);
+      top:-140px;
+      right:-140px;
+      filter:blur(10px);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      background:rgba(255,183,3,0.08);
+      bottom:-120px;
+      left:-90px;
+      filter:blur(8px);
+    }
+
+    .hero-content{
+      min-height:calc(100vh - 78px);
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      align-items:center;
+      gap:60px;
+      padding:80px 0 100px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.10);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:500;
+      margin-bottom:22px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .hero-left h1{
+      font-size:clamp(2.4rem, 5vw, 4.5rem);
+      line-height:1.08;
+      letter-spacing:-1.8px;
+      margin-bottom:22px;
+      max-width:700px;
+    }
+
+    .hero-left h1 span{
+      color:var(--primary);
+    }
+
+    .hero-left p{
+      font-size:17px;
+      color:rgba(255,255,255,0.86);
+      max-width:620px;
+      margin-bottom:28px;
+    }
+
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      outline:none;
+      text-decoration:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-weight:600;
+      border-radius:12px;
+      padding:15px 24px;
+      transition:all .25s ease;
+      font-size:15px;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#111827;
+      box-shadow:0 12px 24px rgba(255,183,3,0.22);
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-dark);
+      transform:translateY(-2px);
+      box-shadow:0 16px 28px rgba(255,183,3,0.26);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,0.08);
+      color:var(--white);
+      border:1px solid rgba(255,255,255,0.22);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.16);
+      transform:translateY(-2px);
+    }
+
+    .hero-trust{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .trust-pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.12);
+      font-size:14px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+    }
+
+    .glass-card{
+      width:100%;
+      max-width:360px;
+      padding:32px;
+      border-radius:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08));
+      border:1px solid rgba(255,255,255,0.18);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      box-shadow:0 25px 60px rgba(0,0,0,0.18);
+      text-align:center;
+      animation:floatCard 4s ease-in-out infinite;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .glass-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,0.12), transparent 45%);
+      pointer-events:none;
+    }
+
+    .glass-card .mini-badge{
+      display:inline-block;
+      background:rgba(255,183,3,0.16);
+      color:#fff3cf;
+      border:1px solid rgba(255,183,3,0.28);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:12px;
+      margin-bottom:16px;
+      font-weight:600;
+    }
+
+    .glass-card h3{
+      font-size:28px;
+      line-height:1.2;
+      margin-bottom:12px;
+      color:#fff;
+    }
+
+    .glass-card p{
+      font-size:15px;
+      color:rgba(255,255,255,0.85);
+      margin-bottom:22px;
+    }
+
+    .glass-list{
+      text-align:left;
+      display:grid;
+      gap:10px;
+      margin:0 0 22px;
+      color:#f8fafc;
+      font-size:14px;
+    }
+
+    .glass-list div{
+      padding:10px 12px;
+      background:rgba(255,255,255,0.08);
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    @keyframes floatCard{
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-10px); }
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:46px;
+    }
+
+    .section-title h2{
+      font-size:clamp(2rem, 3vw, 2.8rem);
+      line-height:1.15;
+      color:#13263d;
+      margin-bottom:12px;
+      letter-spacing:-1px;
+    }
+
+    .section-title p{
+      color:var(--text-light);
+      max-width:720px;
+      margin:0 auto;
+    }
+
+    /* SERVICES */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:24px;
+    }
+
+    .service-card{
+      background:var(--card);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 12px 32px rgba(15,23,42,0.07);
+      transition:all .3s ease;
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,0.05);
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg, #457b9d, #1d3557, var(--primary));
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 40px rgba(15,23,42,0.12);
+    }
+
+    .service-icon{
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:26px;
+      background:linear-gradient(135deg, rgba(69,123,157,0.12), rgba(255,183,3,0.12));
+      margin-bottom:18px;
+    }
+
+    .service-card h3{
+      font-size:20px;
+      margin-bottom:10px;
+      color:#18314d;
+    }
+
+    .service-card p{
+      color:#5f6979;
+      font-size:14px;
+    }
+
+    /* SOFTWARE */
+    .software{
+      background:linear-gradient(180deg, #eef4fa 0%, #f7faff 100%);
+    }
+
+    .logo-track{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .logo-item{
+      background:#fff;
+      border-radius:20px;
+      min-height:130px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 12px 30px rgba(15,23,42,0.06);
+      border:1px solid rgba(15,23,42,0.05);
+      transition:all .3s ease;
+      padding:24px;
+    }
+
+    .logo-item:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 34px rgba(15,23,42,0.10);
+    }
+
+    .logo-item img{
+      width:92px;
+      max-height:46px;
+      object-fit:contain;
+      filter:grayscale(100%);
+      opacity:.78;
+      transition:all .3s ease;
+    }
+
+    .logo-item:hover img{
+      filter:grayscale(0);
+      opacity:1;
+      transform:scale(1.05);
+    }
+
+    /* LEAD FORM */
+    .lead-section{
+      background:#fff;
+    }
+
+    .lead-wrap{
+      max-width:780px;
+      margin:0 auto;
+      background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:0 16px 40px rgba(15,23,42,0.07);
+      border:1px solid rgba(15,23,42,0.06);
+    }
+
+    .lead-form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:26px;
+    }
+
+    .lead-form .full{
+      grid-column:1 / -1;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .field label{
+      font-size:14px;
+      font-weight:500;
+      color:#334155;
+    }
+
+    .lead-form input{
+      width:100%;
+      padding:14px 16px;
+      border:1px solid #dbe3ef;
+      border-radius:12px;
+      font-size:15px;
+      outline:none;
+      transition:border-color .25s ease, box-shadow .25s ease;
+      background:#fff;
+    }
+
+    .lead-form input:focus{
+      border-color:#6ea0c6;
+      box-shadow:0 0 0 4px rgba(69,123,157,0.12);
+    }
+
+    .lead-form button{
+      width:100%;
+    }
+
+    /* STICKY CTA */
+    .sticky-cta{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      width:min(860px, calc(100% - 24px));
+      background:rgba(19,38,61,0.92);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-radius:18px;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      z-index:999;
+    }
+
+    .sticky-cta p{
+      font-size:14px;
+      color:rgba(255,255,255,0.88);
+    }
+
+    .sticky-cta .btn{
+      padding:12px 18px;
+      white-space:nowrap;
+    }
+
+    footer{
+      text-align:center;
+      padding:28px 0 110px;
+      background:#0f172a;
+      color:#cbd5e1;
+      font-size:14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px){
+      .hero-content{
+        grid-template-columns:1fr;
+        padding:70px 0 90px;
+      }
+
+      .hero-right{
+        justify-content:flex-start;
+      }
+
+      .glass-card{
+        max-width:100%;
+      }
+    }
+
+    @media (max-width: 768px){
+      .nav-inner{
+        flex-direction:column;
+        gap:16px;
+      }
+
+      .nav-links{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-left h1{
+        font-size:2.4rem;
+      }
+
+      .hero-left p{
+        font-size:16px;
+      }
+
+      .lead-form{
+        grid-template-columns:1fr;
+      }
+
+      .sticky-cta{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .sticky-cta .btn{
+        width:100%;
+      }
+    }
+
+    @media (max-width: 520px){
+      .hero{
+        text-align:left;
+      }
+
+      .hero-cta{
+        flex-direction:column;
+      }
+
+      .hero-cta .btn{
+        width:100%;
+      }
+
+      .trust-pill{
+        width:100%;
+      }
+
+      .lead-wrap{
+        padding:24px 18px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-<a href="https://navonglobal.com/" class="logo" target="_blank">
-  <div>Navon Global</div>
-  <span class="logo-sub">Now On NAVON</span>
-</a><div class="nav-links">
-<a href="#bookkeeping">Services</a>
-<a href="https://navonglobal.com/contact/" target="_blank">Contact</a>
-</div>
-</div>
-  
-<!-- HERO -->
-<section class="hero">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="https://navonglobal.com/" class="logo" target="_blank">
+        <strong>Navon Global</strong>
+        <span>NOW ON NAVON</span>
+      </a>
 
-<div class="hero-content">
+      <nav class="nav-links">
+        <a href="#bookkeeping">Services</a>
+        <a href="#software">Software</a>
+        <a href="#consultation">Consultation</a>
+        <a href="https://navonglobal.com/contact/" target="_blank">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="hero-left">
-<h1>
-Scale Your Business with <span>Expert Bookkeeping</span>
-</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">Trusted by Australian businesses • CPA-led support</div>
 
-<p>
-We help Australian businesses save 10+ hours weekly, reduce costs, and gain real-time financial clarity with CPA-led experts.
-</p>
+        <h1>
+          Scale Your Business with <span>Expert Bookkeeping</span>
+        </h1>
 
-<div class="hero-cta">
-<button class="primary-btn" onclick="window.open('https://calendly.com','_blank')">
-Book Free Strategy Call
-</button>
+        <p>
+          We help Australian businesses save 10+ hours weekly, reduce costs, and gain real-time financial clarity with dependable, CPA-led bookkeeping support.
+        </p>
 
-<button class="secondary-btn" onclick="window.open('https://wa.me/YOURNUMBER','_blank')">
-Chat on WhatsApp
-</button>
-</div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://calendly.com" target="_blank">
+            Book Free Strategy Call
+          </a>
+          <a class="btn btn-secondary" href="https://wa.me/YOURNUMBER" target="_blank">
+            Chat on WhatsApp
+          </a>
+        </div>
 
-<div class="hero-trust">
-<div>✔ 500+ Clients</div>
-<div>✔ 20+ Years Experience</div>
-<div>✔ CPA Certified Team</div>
-</div>
+        <div class="hero-trust">
+          <div class="trust-pill">✔ 500+ Clients</div>
+          <div class="trust-pill">✔ 20+ Years Experience</div>
+          <div class="trust-pill">✔ CPA Certified Team</div>
+        </div>
+      </div>
 
-</div>
+      <div class="hero-right">
+        <div class="glass-card">
+          <div class="mini-badge">Free Audit Offer</div>
+          <h3>Free Financial Health Check</h3>
+          <p>Get a quick audit of your books plus a practical improvement plan tailored to your business.</p>
 
-<div class="hero-right">
-<div class="glass-card">
-<h3>Free Financial Health Check</h3>
-<p>Get a quick audit of your books & improvement plan.</p>
-<button onclick="window.open('https://calendly.com','_blank')">Get Started</button>
-</div>
-</div>
+          <div class="glass-list">
+            <div>✔ Review bookkeeping gaps</div>
+            <div>✔ Identify reporting issues</div>
+            <div>✔ Recommend workflow improvements</div>
+          </div>
 
-</div>
+          <a class="btn btn-primary" href="https://calendly.com" target="_blank">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <!-- SERVICES -->
+  <section class="section" id="bookkeeping">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Bookkeeping Services</h2>
+        <p>End-to-end finance support designed for Australian businesses that want accurate books, better visibility, and smoother operations.</p>
+      </div>
 
-<!-- SERVICES -->
-  
-<section class="section" id="bookkeeping">
-<div class="section-title">
-<h2>Our Bookkeeping Services</h2>
-<p>End-to-end finance support designed for Australian businesses</p>
-</div>
+      <div class="services">
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>Daily Bookkeeping</h3>
+          <p>Accurate transaction recording, categorisation, and reconciliations to keep your books clean, updated, and compliant.</p>
+        </div>
 
-<div class="services">
+        <div class="service-card">
+          <div class="service-icon">💳</div>
+          <h3>Accounts Payable</h3>
+          <p>Vendor bill management, approval workflows, and timely payments to support healthy supplier relationships.</p>
+        </div>
 
-<div class="service-card">
-<div class="icon">📊</div>
-<h3>Daily Bookkeeping</h3>
-<p>Accurate transaction recording, categorisation, and reconciliations to keep your books clean and compliant.</p>
-</div>
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3>Accounts Receivable</h3>
+          <p>Invoice tracking and collection follow-ups that improve cash flow and reduce outstanding receivables.</p>
+        </div>
 
-<div class="service-card">
-<div class="icon">💳</div>
-<h3>Accounts Payable</h3>
-<p>Vendor bill management, approvals, and timely payments to maintain strong supplier relationships.</p>
-</div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Financial Reporting</h3>
+          <p>Monthly profit and loss, balance sheet, and business insights to help you make confident financial decisions.</p>
+        </div>
 
-<div class="service-card">
-<div class="icon">💰</div>
-<h3>Accounts Receivable</h3>
-<p>Invoice management and follow-ups to improve your cash flow and reduce outstanding payments.</p>
-</div>
+        <div class="service-card">
+          <div class="service-icon">🧾</div>
+          <h3>BAS & GST Support</h3>
+          <p>Reliable GST tracking and BAS preparation aligned with Australian compliance requirements and reporting needs.</p>
+        </div>
 
-<div class="service-card">
-<div class="icon">📈</div>
-<h3>Financial Reporting</h3>
-<p>Monthly P&L, balance sheet, and insights to help you make better business decisions.</p>
-</div>
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3>Software Integration</h3>
+          <p>Setup, migration, and optimisation of Xero, QuickBooks, and MYOB for more efficient financial workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="service-card">
-<div class="icon">🧾</div>
-<h3>BAS & GST Support</h3>
-<p>Accurate GST tracking and BAS preparation aligned with Australian compliance standards.</p>
-</div>
+  <!-- SOFTWARE -->
+  <section class="section software" id="software">
+    <div class="container">
+      <div class="section-title">
+        <h2>Software Expertise</h2>
+        <p>We work across leading bookkeeping and accounting platforms used by growing Australian businesses.</p>
+      </div>
 
-<div class="service-card">
-<div class="icon">⚙️</div>
-<h3>Software Integration</h3>
-<p>Setup and optimisation of Xero, QuickBooks & MYOB for efficient financial workflows.</p>
-</div>
+      <div class="logo-track">
+        <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/xero-1.svg" alt="Xero logo"></div>
+        <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg" alt="QuickBooks logo"></div>
+        <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/myob.svg" alt="MYOB logo"></div>
+        <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/xero-1.svg" alt="Xero logo"></div>
+        <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg" alt="QuickBooks logo"></div>
+        <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/myob.svg" alt="MYOB logo"></div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
+  <!-- LEAD FORM -->
+  <section class="section lead-section" id="consultation">
+    <div class="container">
+      <div class="lead-wrap">
+        <div class="section-title" style="margin-bottom:0;">
+          <h2>Get Your Free Consultation</h2>
+          <p>Tell us a little about your business and we’ll connect with you with the right next step.</p>
+        </div>
 
-<!-- SOFTWARE -->
-<section class="software">
-<h2 style="text-align:Center;margin-bottom:40px;">Software Expertise</h2>
+        <form class="lead-form" onsubmit="sendToWhatsApp(event)">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+          </div>
 
-<div class="logo-track">
-<div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/xero-1.svg"></div>
-<div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg"></div>
-<div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/myob.svg"></div>
+          <div class="field">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" placeholder="Enter company name">
+          </div>
 
-<div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/xero-1.svg"></div>
-<div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/quickbooks-2.svg"></div>
-<div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/myob.svg"></div>
-</div>
-</section>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
 
-<!-- LEAD FORM -->
-<section class="lead-section">
-<h2>Get Free Consultation</h2>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter your phone number">
+          </div>
 
-<form class="lead-form" onsubmit="sendToWhatsApp(event)">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="text" id="company" placeholder="Company Name">
-<input type="email" id="email" placeholder="Email" required>
-<input type="text" id="phone" placeholder="Phone">
+          <div class="field full">
+            <button type="submit" class="btn btn-primary">Get Free Consultation</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-<button type="submit">Get Free Consultation</button>
-</form>
-</section>
+  <!-- STICKY CTA -->
+  <div class="sticky-cta">
+    <div>
+      <strong>Need bookkeeping help?</strong>
+      <p>Book a quick call and get clarity on your next financial steps.</p>
+    </div>
+    <a class="btn btn-primary" href="https://calendly.com" target="_blank">Book Call</a>
+  </div>
 
-<!-- STICKY CTA -->
-<div class="sticky-cta">
-<span>Need bookkeeping help?</span>
-<button onclick="window.open('https://calendly.com','_blank')">Book Call</button>
-</div>
+  <footer>
+    <p>© 2026 Navon Global. All rights reserved.</p>
+  </footer>
 
-<footer>
-<p>© 2026 Navon Global</p>
-</footer>
+  <script>
+    function sendToWhatsApp(e){
+      e.preventDefault();
 
-<script>
-function sendToWhatsApp(e){
-e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
 
-let name=document.getElementById('name').value;
-let email=document.getElementById('email').value;
-let company=document.getElementById('company').value;
+      const msg =
+        `New Lead:%0A` +
+        `Name: ${name}%0A` +
+        `Company: ${company}%0A` +
+        `Email: ${email}%0A` +
+        `Phone: ${phone}`;
 
-let msg=`New Lead:%0AName: ${name}%0AEmail: ${email}%0ACompany: ${company}`;
-
-window.open(`https://wa.me/YOURNUMBER?text=${msg}`,'_blank');
-}
-
-// Navbar shrink effect
-window.addEventListener("scroll", function(){
-  const navbar = document.querySelector(".navbar");
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-// Active link highlight
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
+      window.open(`https://wa.me/YOURNUMBER?text=${msg}`, '_blank');
     }
-  });
 
-  navLinks.forEach(a => {
-    a.classList.remove("active");
-    if(a.getAttribute("href") === "#" + current){
-      a.classList.add("active");
-    }
-  });
-});
-  
-  
-</script>
+    // Navbar scroll effect
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 30);
+    });
 
+    // Active link highlight
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
